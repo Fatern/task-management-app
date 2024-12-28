@@ -1,18 +1,24 @@
-import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {BrowserRouter as Router,Routes,Route,Navigate,} 
+from "react-router-dom";
 import LoginForm from "./components/loginform";
 import Dashboard from "./components/homepage";
 
 const AppRoutes = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const loggedInStatus = sessionStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(loggedInStatus);
+  }, []);
+
   const handleLogin = () => {
     setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("isLoggedIn"); // Hapus status login
+    setIsLoggedIn(false);
   };
 
   return (
@@ -30,7 +36,13 @@ const AppRoutes = () => {
         />
         <Route
           path="/homepage"
-          element={isLoggedIn ? <Dashboard /> : <Navigate to="/" replace />}
+          element={
+            isLoggedIn ? (
+              <Dashboard onLogout={handleLogout} />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

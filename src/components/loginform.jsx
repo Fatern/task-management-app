@@ -1,28 +1,35 @@
 import React, { useState } from "react";
-import users from "../data/users.json"; // Import JSON langsung
+import users from "../data/users.json"; 
+import show from "../assets/lamp-fill.svg";
+import hide from "../assets/lamp.svg";
 
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validasi login
     const user = users.find(
       (u) => u.username === username && u.password === password
     );
 
     if (user) {
-      onLogin(); // Berhasil login
+      sessionStorage.setItem("isLoggedIn", "true");
+      onLogin();
     } else {
-      setError("Invalid username or password"); // Gagal login
+      setError("Invalid username or password");
     }
   };
 
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
-    <div className="flex items-center justify-center h-screen bg-krem">
+    <div className="font-sans flex items-center justify-center h-screen bg-krem">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md w-96"
@@ -39,15 +46,26 @@ const LoginForm = ({ onLogin }) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <label className="block text-gray-700">Password</label>
           <input
-            type="password"
-            className="w-full px-3 py-2 border rounded"
+            type={showPassword ? "text" : "password"} 
+            className="w-full px-3 py-2 border rounded pr-10"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <button
+            type="button"
+            onClick={togglePasswordVisibility}
+            className="px-2 py-2 right-1 absolute"
+          >
+            <img
+              src={showPassword ? hide : show}
+              alt={showPassword ? "Hide password" : "Show password"}
+              className="h-6 w-6"
+            />
+          </button>
         </div>
         <button
           type="submit"
