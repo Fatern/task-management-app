@@ -1,0 +1,173 @@
+{
+  "staff": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "age": "20",
+      "address": "1234 Elm Street, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "position": "Product Manager",
+      "age": 32,
+      "address": "5678 Oak Avenue, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "position": "UX Designer",
+      "age": 27,
+      "address": "9101 Pine Lane, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "4",
+      "name": "Michael Brown",
+      "position": "Data Scientist",
+      "age": 35,
+      "address": "2345 Maple Drive, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "5",
+      "name": "Emily Davis",
+      "position": "DevOps Engineer",
+      "age": 30,
+      "address": "6789 Birch Street, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "6",
+      "name": "Chris Wilson",
+      "position": "Backend Developer",
+      "age": 29,
+      "address": "3456 Cedar Lane, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "7",
+      "name": "Laura Martinez",
+      "position": "Frontend Developer",
+      "age": 26,
+      "address": "7890 Pine Avenue, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "8",
+      "name": "Daniel Garcia",
+      "position": "Quality Assurance Engineer",
+      "age": 33,
+      "address": "1234 Cherry Street, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "9",
+      "name": "Sophia Anderson",
+      "position": "Project Manager",
+      "age": 34,
+      "address": "5678 Walnut Avenue, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "10",
+      "name": "James Rodriguez",
+      "position": "Mobile App Developer",
+      "age": 31,
+      "address": "3456 Elm Lane, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "11",
+      "name": "Olivia Hernandez",
+      "position": "Database Administrator",
+      "age": 28,
+      "address": "7890 Oak Street, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "12",
+      "name": "Ethan Moore",
+      "position": "Cybersecurity Specialist",
+      "age": 29,
+      "address": "1234 Birch Lane, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "13",
+      "name": "Mia Thompson",
+      "position": "Cloud Engineer",
+      "age": 27,
+      "address": "5678 Pine Drive, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "14",
+      "name": "William White",
+      "position": "AI Researcher",
+      "age": 36,
+      "address": "3456 Maple Avenue, Springfield, USA",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "",
+      "name": "Xeon",
+      "position": "Manajer",
+      "age": "57",
+      "address": "jl.karmul",
+      "photo": ""
+    }
+  ],
+  "users": [
+    {
+      "username": "Mahkluk Hidup",
+      "password": "admin#12345",
+      "id": "a31e"
+    },
+    {
+      "username": "Manusial",
+      "password": "54321",
+      "id": "ce88"
+    },
+    {
+      "username": "Mahluk Hitam",
+      "password": "12345",
+      "id": "60ad"
+    }
+  ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Menyelesaikan laporan keuangan",
+          "description": "Buat laporan keuangan bulan Desember 2024.",
+          "due_date": "2024-12-31"
+        },
+        {
+          "id": 2,
+          "title": "Rapat evaluasi tim",
+          "description": "Persiapkan bahan untuk rapat evaluasi kinerja tahunan.",
+          "due_date": "2024-12-30"
+        },
+        {
+          "id": 3,
+          "title": "Review proyek akhir",
+          "description": "Review dan beri masukan untuk laporan proyek akhir dari tim pengembang.",
+          "due_date": "2024-12-28"
+        },
+        {
+          "id": 4,
+          "title": "Pengumpulan data pelanggan",
+          "description": "Kumpulkan dan susun data pelanggan baru selama kuartal keempat.",
+          "due_date": "2024-12-29"
+        },
+        {
+          "id": 5,
+          "title": "Persiapan presentasi",
+          "description": "Siapkan slide presentasi untuk meeting dengan investor.",
+          "due_date": "2025-01-05"
+        }
+      ]
+}

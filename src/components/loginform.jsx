@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import users from "../data/users.json"; 
+import React, { useState, useEffect } from "react";
 import show from "../assets/lamp-fill.svg";
 import hide from "../assets/lamp.svg";
 
@@ -8,6 +7,26 @@ const LoginForm = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [users, setUsers] = useState([]); // State untuk menyimpan data pengguna
+
+  // Memuat data pengguna dari JSON Server
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/users");
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setError("Failed to load user data");
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +42,6 @@ const LoginForm = ({ onLogin }) => {
     }
   };
 
-  
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
@@ -49,7 +67,7 @@ const LoginForm = ({ onLogin }) => {
         <div className="mb-4 relative">
           <label className="block text-gray-700">Password</label>
           <input
-            type={showPassword ? "text" : "password"} 
+            type={showPassword ? "text" : "password"}
             className="w-full px-3 py-2 border rounded pr-10"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
