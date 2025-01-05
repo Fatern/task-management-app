@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/task-management-app/static/css/main.76f52f6d.css",
+    "main.js": "/task-management-app/static/js/main.10e5d02f.js",
+    "static/js/488.47871db3.chunk.js": "/task-management-app/static/js/488.47871db3.chunk.js",
+    "static/media/full-moon.png": "/task-management-app/static/media/full-moon.49d6c46b03e11d087750.png",
+    "static/media/sun.png": "/task-management-app/static/media/sun.9b12db98b8dc0f1ec7af.png",
+    "static/media/lamp.svg": "/task-management-app/static/media/lamp.7cbc8896be5885b0112de3282df66a2a.svg",
+    "static/media/lamp-fill.svg": "/task-management-app/static/media/lamp-fill.309e76397a53db2bd89acfee719b1d31.svg",
+    "index.html": "/task-management-app/index.html",
+    "main.76f52f6d.css.map": "/task-management-app/static/css/main.76f52f6d.css.map",
+    "main.10e5d02f.js.map": "/task-management-app/static/js/main.10e5d02f.js.map",
+    "488.47871db3.chunk.js.map": "/task-management-app/static/js/488.47871db3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76f52f6d.css",
+    "static/js/main.10e5d02f.js"
+  ]
+}
