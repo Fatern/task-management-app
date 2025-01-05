@@ -7,9 +7,8 @@ const LoginForm = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [users, setUsers] = useState([]); // State untuk menyimpan data pengguna
+  const [users, setUsers] = useState([]);
 
-  // Memuat data pengguna dari JSON Server
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -26,7 +25,7 @@ const LoginForm = ({ onLogin }) => {
     };
 
     fetchUsers();
-  }, []);
+  }, [onLogin]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

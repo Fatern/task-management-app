@@ -1,32 +1,7 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  useMediaQuery,
-  Badge,
-  InputBase,
-  Button,
-} from "@mui/material";
-import {
-  Dashboard as DashboardIcon,
-  Person,
-  Notifications,
-  Settings,
-  Search,
-  CalendarToday,
-  Group,
-  Contacts,
-  BarChart,
-  Add,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, Badge, InputBase, Button, } from "@mui/material";
+import { Dashboard as DashboardIcon, Person, Notifications, Settings, Search, CalendarToday, Group, Add, Menu as MenuIcon, } from "@mui/icons-material";
 import Moon from "../assets/full-moon.png";
 import Sun from "../assets/sun.png";
 
@@ -36,7 +11,6 @@ const Layout = ({ onLogout }) => {
   const isMobile = useMediaQuery("(max-width:768px)");
   const navigate = useNavigate();
 
-  // Simpan atau ambil status dark mode dari localStorage
   React.useEffect(() => {
     const storedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(storedMode);
@@ -47,7 +21,6 @@ const Layout = ({ onLogout }) => {
     }
   }, []);
 
-  // Fungsi untuk toggle dark mode
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
@@ -67,23 +40,21 @@ const Layout = ({ onLogout }) => {
     { text: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
     { text: "Profile Teams", icon: <Person />, path: "/profiles" },
     { text: "Calendar", icon: <CalendarToday />, path: "/calendar" },
-    { text: "Create", icon: <Add />, path: "/create" },
-    { text: "Contact Information", icon: <Contacts />, path: "/contacts" },
-    { text: "Task", icon: <Group />, path: "/tasklist" },
-    { text: "Chart", icon: <BarChart />, path: "/chart" },
+    { text: "Create Staff", icon: <Group />, path: "/create" },
+    { text: "Create Task", icon: <Add />, path: "/tasks" },
   ];
 
   return (
-    <div className="min-h-screen flex bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Sidebar */}
+    <div className="min-h-screen flex bg-gray-100 dark:bg-black text-gray-900 dark:text-gray-100">
+      {/* INI Sidebar */}
       <Drawer
         variant={isMobile ? "temporary" : "persistent"}
         anchor="left"
         open={drawerOpen}
         onClose={toggleDrawer}
-        classes={{ paper: "bg-gray-800 dark:bg-gray-700 text-gray-100" }}
+        classes={{ paper: "bg-blue-500 dark:bg-gray-900 p-7" }}
       >
-        <div className="p-4 flex justify-between items-center">
+        <div className="p-5 flex justify-between items-center dark:text-gray-100">
           <h2 className="text-lg font-bold">Menu</h2>
           {isMobile && (
             <IconButton onClick={toggleDrawer} className="text-gray-100">
@@ -96,30 +67,30 @@ const Layout = ({ onLogout }) => {
             <ListItem
               button
               key={index}
-              className="hover:bg-gray-700"
+              className="hover:bg-gray-100 text-gray-400"
               onClick={() => navigate(item.path)}
             >
-              <ListItemIcon className="text-gray-400">{item.icon}</ListItemIcon>
+              <ListItemIcon className="dark:bg-gray-900">{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
           ))}
         </List>
       </Drawer>
 
-      {/* Main Content */}
+      {/* INI Main Content */}
       <div
         className={`flex-1 flex flex-col transition-all duration-300 ${
           drawerOpen && !isMobile ? "ml-60" : ""
         }`}
       >
-        {/* Top Bar */}
-        <AppBar position="sticky" className="bg-gray-800 dark:bg-gray-700 z-10">
+        {/* INI Top Bar */}
+        <AppBar position="sticky" className="bg-white dark:bg-gray-900 z-10">
           <Toolbar className="flex justify-between items-center">
             <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
               <MenuIcon />
             </IconButton>
 
-            <div className="flex items-center space-x-2 bg-gray-700 dark:bg-gray-600 rounded px-2 py-1 flex-1 max-w-md">
+            <div className="flex items-center space-x-2 bg-white dark:bg-gray-600 rounded px-2 py-1 flex-1 max-w-md">
               <Search className="text-gray-400" />
               <InputBase
                 placeholder="Search..."
@@ -139,7 +110,7 @@ const Layout = ({ onLogout }) => {
                 <Settings />
               </IconButton>
 
-              {/* Toggle Dark Mode */}
+              {/*INI Toggle Dark Mode */}
               <IconButton onClick={toggleDarkMode} className="p-2">
                 {darkMode ? (
                   <img src={Sun} alt="Light Mode" className="h-6 w-6" />
@@ -148,15 +119,19 @@ const Layout = ({ onLogout }) => {
                 )}
               </IconButton>
 
-              {/* Logout Button */}
-              <Button variant="contained" color="secondary" onClick={onLogout}>
-                Logout
-              </Button>
+              {/*INI Logout Button */}
+              <div className="bg-black">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={onLogout}
+                >
+                  Logout
+                </Button>
+              </div>
             </div>
           </Toolbar>
         </AppBar>
-
-        {/* Page Content */}
         <main className="p-6">
           <Outlet />
         </main>

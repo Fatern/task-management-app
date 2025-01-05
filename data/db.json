@@ -9,16 +9,8 @@
       "photo": "https://via.placeholder.com/150"
     },
     {
-      "id": "2",
-      "name": "Jane Smith",
-      "position": "Product Manager",
-      "age": 32,
-      "address": "5678 Oak Avenue, Springfield, USA",
-      "photo": "https://via.placeholder.com/150"
-    },
-    {
       "id": "3",
-      "name": "Alice Johnson",
+      "name": "Alice wibisono",
       "position": "UX Designer",
       "age": 27,
       "address": "9101 Pine Lane, Springfield, USA",
@@ -38,14 +30,6 @@
       "position": "DevOps Engineer",
       "age": 30,
       "address": "6789 Birch Street, Springfield, USA",
-      "photo": "https://via.placeholder.com/150"
-    },
-    {
-      "id": "6",
-      "name": "Chris Wilson",
-      "position": "Backend Developer",
-      "age": 29,
-      "address": "3456 Cedar Lane, Springfield, USA",
       "photo": "https://via.placeholder.com/150"
     },
     {
@@ -74,26 +58,10 @@
     },
     {
       "id": "10",
-      "name": "James Rodriguez",
+      "name": "James makan nasi",
       "position": "Mobile App Developer",
       "age": 31,
       "address": "3456 Elm Lane, Springfield, USA",
-      "photo": "https://via.placeholder.com/150"
-    },
-    {
-      "id": "11",
-      "name": "Olivia Hernandez",
-      "position": "Database Administrator",
-      "age": 28,
-      "address": "7890 Oak Street, Springfield, USA",
-      "photo": "https://via.placeholder.com/150"
-    },
-    {
-      "id": "12",
-      "name": "Ethan Moore",
-      "position": "Cybersecurity Specialist",
-      "age": 29,
-      "address": "1234 Birch Lane, Springfield, USA",
       "photo": "https://via.placeholder.com/150"
     },
     {
@@ -105,20 +73,27 @@
       "photo": "https://via.placeholder.com/150"
     },
     {
-      "id": "14",
-      "name": "William White",
-      "position": "AI Researcher",
-      "age": 36,
-      "address": "3456 Maple Avenue, Springfield, USA",
-      "photo": "https://via.placeholder.com/150"
+      "id": "ab2e",
+      "name": "Restu Mahardhika",
+      "position": "Software Engineer",
+      "age": "30",
+      "address": "Kilo 5",
+      "photo": ""
     },
     {
-      "id": "",
-      "name": "Xeon",
+      "id": "8296",
+      "name": "JoVaNF",
       "position": "Manajer",
-      "age": "57",
+      "age": "15",
       "address": "jl.karmul",
       "photo": ""
+    },
+    {
+      "id": "3671",
+      "name": "Heru Prasetyo",
+      "position": "Software Engineer",
+      "age": "18",
+      "address": "jl.karmul"
     }
   ],
   "users": [
@@ -138,36 +113,30 @@
       "id": "60ad"
     }
   ],
-      "tasks": [
-        {
-          "id": 1,
-          "title": "Menyelesaikan laporan keuangan",
-          "description": "Buat laporan keuangan bulan Desember 2024.",
-          "due_date": "2024-12-31"
-        },
-        {
-          "id": 2,
-          "title": "Rapat evaluasi tim",
-          "description": "Persiapkan bahan untuk rapat evaluasi kinerja tahunan.",
-          "due_date": "2024-12-30"
-        },
-        {
-          "id": 3,
-          "title": "Review proyek akhir",
-          "description": "Review dan beri masukan untuk laporan proyek akhir dari tim pengembang.",
-          "due_date": "2024-12-28"
-        },
-        {
-          "id": 4,
-          "title": "Pengumpulan data pelanggan",
-          "description": "Kumpulkan dan susun data pelanggan baru selama kuartal keempat.",
-          "due_date": "2024-12-29"
-        },
-        {
-          "id": 5,
-          "title": "Persiapan presentasi",
-          "description": "Siapkan slide presentasi untuk meeting dengan investor.",
-          "due_date": "2025-01-05"
-        }
-      ]
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Menyelesaikan laporan keuangan",
+      "description": "Buat laporan keuangan bulan Desember 2024.",
+      "dueDate": "2025-01-05",
+      "status": "Complete",
+      "assignedTo": "William"
+    },
+    {
+      "id": "3",
+      "title": "Review proyek akhir",
+      "description": "Review dan beri masukan untuk laporan proyek akhir dari tim pengembang.",
+      "assignedTo": "martin",
+      "status": "Pending",
+      "dueDate": "2025-01-07"
+    },
+    {
+      "id": "c74e",
+      "title": "Reservasi Restoran",
+      "description": "Makan Bersama",
+      "dueDate": "2025-01-08",
+      "status": "Complete",
+      "assignedTo": "Xeon"
+    }
+  ]
 }

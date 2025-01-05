@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Create = ({ staff, setStaff }) => {
   const [newStaff, setNewStaff] = useState({
@@ -7,21 +7,24 @@ const Create = ({ staff, setStaff }) => {
     position: "",
     age: "",
     address: "",
-    photo: "",
   });
 
-  // Handle perubahan input di form
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewStaff({ ...newStaff, [name]: value });
   };
 
-  // Tambah data staf baru
+//INI Create
   const handleAddStaff = async () => {
+if (!newStaff.name ||!newStaff.position ||!newStaff.age ||!newStaff.address) {
+  alert("Please fill out all fields!");
+  return;
+}
+    const {id, ...staffwithoutId} = newStaff;
     const response = await fetch("http://localhost:3001/staff", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newStaff),
+      body: JSON.stringify(staffwithoutId),
     });
     const addedStaff = await response.json();
     setStaff([...staff, addedStaff]);
@@ -35,13 +38,12 @@ const Create = ({ staff, setStaff }) => {
     });
   };
 
-  // Edit data staf (mengisi form dengan data staf yang dipilih)
   const handleEditStaff = (id) => {
     const staffToEdit = staff.find((s) => s.id === id);
     setNewStaff(staffToEdit);
   };
 
-  // Update data staf yang diedit
+//INI Update
   const handleUpdateStaff = async () => {
     const response = await fetch(`http://localhost:3001/staff/${newStaff.id}`, {
       method: "PUT",
@@ -62,8 +64,7 @@ const Create = ({ staff, setStaff }) => {
       photo: "",
     });
   };
-
-  // Hapus data staf
+//INI Delete
   const handleDeleteStaff = async (id) => {
     await fetch(`http://localhost:3001/staff/${id}`, {
       method: "DELETE",
@@ -73,10 +74,8 @@ const Create = ({ staff, setStaff }) => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
       <h1 className="text-2xl font-bold mb-6">Manage Staff</h1>
-
-      {/* Form untuk Tambah/Edit Staf */}
       <div className="mb-6">
         <input
           type="text"
@@ -110,16 +109,6 @@ const Create = ({ staff, setStaff }) => {
           onChange={handleInputChange}
           className="block w-full mb-2 p-2 border rounded"
         />
-        <input
-          type="text"
-          name="photo"
-          value={newStaff.photo}
-          placeholder="Photo URL"
-          onChange={handleInputChange}
-          className="block w-full mb-2 p-2 border rounded"
-        />
-
-        {/* Tombol Tambah/Update */}
         {newStaff.id ? (
           <button
             onClick={handleUpdateStaff}
@@ -136,8 +125,6 @@ const Create = ({ staff, setStaff }) => {
           </button>
         )}
       </div>
-
-      {/* Daftar Staf */}
       <h2 className="text-xl font-bold mb-4">Staff List</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {staff.map((s) => (
@@ -149,13 +136,6 @@ const Create = ({ staff, setStaff }) => {
             <p>Position: {s.position}</p>
             <p>Age: {s.age}</p>
             <p>Address: {s.address}</p>
-            <img
-              src={s.photo}
-              alt={s.name}
-              className="w-full h-32 object-cover rounded mt-2"
-            />
-
-            {/* Tombol Edit dan Delete */}
             <button
               onClick={() => handleEditStaff(s.id)}
               className="bg-yellow-500 text-white py-1 px-2 rounded mt-2 mr-2"
