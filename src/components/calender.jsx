@@ -119,8 +119,8 @@ const CalendarPage = () => {
               events={getEvents()}
               dateClick={handleDateClick}
               eventClick={handleEventClick}
-              height="80vh" // Mengatur tinggi kalender agar lebih kecil
-              contentHeight="auto" // Mengatur tinggi konten agar fleksibel
+              height="80vh"
+              contentHeight="auto"
             />
           </div>
 
@@ -131,7 +131,7 @@ const CalendarPage = () => {
             {tasksForSelectedDate.map((task) => (
               <div
                 key={task.id}
-                className="mt-2 dark:bg-gray-900 bg-gray-300 p-4 rounded-md"
+                className="mt-2 dark:bg-gray-800 bg-gray-300 p-4 rounded-md"
               >
                 <h3 className="font-bold">{task.title}</h3>
                 <p>{task.description}</p>
