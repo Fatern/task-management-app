@@ -103,7 +103,7 @@ const CalendarPage = () => {
   }, [tasks, selectedDate]);
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
+    <div className="p-6 bg-krem dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
       <h1 className="text-4xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">
         Calendar
       </h1>
@@ -131,7 +131,7 @@ const CalendarPage = () => {
             {tasksForSelectedDate.map((task) => (
               <div
                 key={task.id}
-                className="mt-2 dark:bg-gray-800 bg-gray-300 p-4 rounded-md"
+                className="mt-2 dark:bg-gray-800 bg-gray-200 p-4 rounded-md"
               >
                 <h3 className="font-bold">{task.title}</h3>
                 <p>{task.description}</p>
@@ -152,7 +152,7 @@ const CalendarPage = () => {
               </div>
             ))}
             {tasksForSelectedDate.length === 0 && (
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-200 dark:text-gray-400">
                 No tasks for this day
               </p>
             )}

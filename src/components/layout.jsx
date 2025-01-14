@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, Badge, InputBase, Button, } from "@mui/material";
-import { Dashboard as DashboardIcon, Person, Notifications, Settings, Search, CalendarToday, Group, Add, Menu as MenuIcon, } from "@mui/icons-material";
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, InputBase, Button, } from "@mui/material";
+import { Dashboard as DashboardIcon, Person, Settings, Search, CalendarToday, Group, Add, Menu as MenuIcon, Announcement} from "@mui/icons-material";
 import Moon from "../assets/full-moon.png";
 import Sun from "../assets/sun.png";
 
@@ -42,6 +42,7 @@ const Layout = ({ onLogout }) => {
     { text: "Calendar", icon: <CalendarToday />, path: "/calendar" },
     { text: "Create Staff", icon: <Group />, path: "/create" },
     { text: "Create Task", icon: <Add />, path: "/tasks" },
+    { text: "About App", icon: <Announcement />, path: "/about" },
   ];
 
   return (
@@ -101,9 +102,6 @@ const Layout = ({ onLogout }) => {
 
             <div className="flex items-center space-x-4">
               <IconButton color="inherit">
-                <Badge badgeContent={4} color="error">
-                  <Notifications />
-                </Badge>
               </IconButton>
 
               <IconButton color="inherit">

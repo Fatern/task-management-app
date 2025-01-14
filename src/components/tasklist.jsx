@@ -103,7 +103,7 @@ const TaskList = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
+    <div className="p-6 bg-krem dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
       <h1 className="text-2xl font-bold mb-6">Task Management</h1>
       <Box
         className="dark:bg-gray-800 rounded-lg p-5"
@@ -222,7 +222,7 @@ const TaskList = () => {
           </div>
         ))}
       </div>
-      <Link to="/calendar" className="mt-4 inline-block text-blue-500">
+      <Link to="/calendar" className="mt-4 inline-block text-bdkrem">
         Go to Calendar
       </Link>
     </div>

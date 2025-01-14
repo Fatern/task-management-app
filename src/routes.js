@@ -7,6 +7,7 @@ import Profiles from "./components/profiles";
 import Create from "./components/create";
 import Task from "./components/tasklist";
 import CalendarView from "./components/calender";
+import AboutApp from "./components/aboutapp";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -95,6 +96,7 @@ const App = () => {
             path="calendar"
             element={<CalendarView calendar={calendar} />}
           />
+          <Route path="about" element={<AboutApp />} />
         </Route>
       </Routes>
     </Router>

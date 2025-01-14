@@ -74,7 +74,7 @@ if (!newStaff.name ||!newStaff.position ||!newStaff.age ||!newStaff.address) {
   };
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
+    <div className="p-6 bg-krem dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen rounded-lg">
       <h1 className="text-2xl font-bold mb-6">Manage Staff</h1>
       <div className="mb-6">
         <input
